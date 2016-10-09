@@ -1,0 +1,89 @@
+ <!DOCTYPE html>
+ <html>
+
+ <link rel="stylesheet" type="text/css" href="css/style.css">
+
+ <head>
+ 	<title></title>
+ </head>
+
+ <body>
+
+ 	<div id = "container">
+ 		<header>
+ 			<button id = "restart" class = "restartButton">	Restart 	</button>
+ 			<div id = "score"> 		Score : 0	</div>
+ 		</header>
+
+ 		<main>
+ 			<div id = "mainBoard">
+ 				<div class = "tile">	</div>
+ 				<div class = "tile">	</div>
+ 				<div class = "tile">	</div>
+ 				<div class = "tile">	</div>
+ 				<div class = "tile">	</div>
+ 				<div class = "tile">	</div>
+ 				<div class = "tile">	</div>
+ 				<div class = "tile">	</div>
+ 				<div class = "tile">	</div>
+ 				<div class = "tile">	</div>
+ 				<div class = "tile">	</div>
+ 				<div class = "tile">	</div>
+ 				<div class = "tile">	</div>
+ 				<div class = "tile">	</div>
+ 				<div class = "tile">	</div>
+ 				<div class = "tile">	</div>
+ 			</div>
+
+ 			<div id = "bestScore">	Best Score 	</div>
+ 			<div id = "bestTile">	Best Tile 	</div>
+ 			<div id = "bottom"> Use the arrow keys to swipe. 'R' for reset.	</div>
+
+ 			<div id = "gameOver">
+ 				<div id = "text">
+ 					Game Over !!! Well Try !!!
+ 					<br>
+ 					Your Score : 
+ 					<br>
+ 					Biggest Tile : 
+ 				</div>
+
+			 	<a href="#" id = "back">				<div id = "backDiv">			Back 		</div>	</a>
+ 				<a href="#" class="restartButton">		<div class = "restart">			Restart 	</div>	</a>
+ 			</div>
+
+ 			<div id = "gameWon">
+ 				Congratulations, 2048 tile reached *_*
+
+			 	<a href="#" id = "back">				<div id = "keepGoing">			Keep Going 		</div>	</a>
+ 				<a href="#" class="restartButton">		<div class = "restart">			Restart 	</div>	</a>
+ 			</div>
+ 		</main>
+ 	</div>
+
+
+ 	<script type="text/javascript" src = "js/code.js">		</script>
+ 	<script type="text/javascript">
+
+ 		var x = {
+ 			gameOver : 'gameOver',
+ 			tileClass : 'tile',
+ 			back : 'back',
+ 			message : 'text',
+ 			restart : 'restartButton',
+ 			score : 'score',
+ 			keepGoing : 'keepGoing',
+ 			gameWon : 'gameWon',
+ 			bestScore : 'bestScore',
+ 			bestTile : 'bestTile',
+ 		};
+
+ 		game2048.init(x);
+
+ 	</script>
+
+
+ </body>
+
+
+ </html>
