@@ -2,12 +2,18 @@
  <html>
 
  <link rel="stylesheet" type="text/css" href="css/style.css">
+ <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 
  <head>
  	<title></title>
  </head>
 
  <body>
+
+ 		<i class="fa fa-angle-left" aria-hidden="true" id = "button_left"></i> 
+ 		<i class="fa fa-angle-right" aria-hidden="true" id = "button_right"></i> 
+ 		<i class="fa fa-angle-up" aria-hidden="true" id = "button_up"></i> 
+ 		<i class="fa fa-angle-down" aria-hidden="true" id = "button_down"></i> 
 
  	<div id = "container">
  		<header>
@@ -48,14 +54,14 @@
  					Biggest Tile : 
  				</div>
 
-			 	<a href="#" id = "back">				<div id = "backDiv">			Back 		</div>	</a>
+ 				<a href="#" id = "back">				<div id = "backDiv">			Back 		</div>	</a>
  				<a href="#" class="restartButton">		<div class = "restart">			Restart 	</div>	</a>
  			</div>
 
  			<div id = "gameWon">
  				Congratulations, 2048 tile reached *_*
 
-			 	<a href="#" id = "back">				<div id = "keepGoing">			Keep Going 		</div>	</a>
+ 				<a href="#" id = "back">				<div id = "keepGoing">			Keep Going 		</div>	</a>
  				<a href="#" class="restartButton">		<div class = "restart">			Restart 	</div>	</a>
  			</div>
  		</main>
@@ -76,6 +82,7 @@
  			gameWon : 'gameWon',
  			bestScore : 'bestScore',
  			bestTile : 'bestTile',
+ 			buttons : {left : 'button_left', right : 'button_right', up : 'button_up', down : 'button_down'}
  		};
 
  		game2048.init(x);

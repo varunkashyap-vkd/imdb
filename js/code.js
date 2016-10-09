@@ -56,17 +56,6 @@ var game2048 = (function()
 
 	function rotateBoardClockWise()
 	{
-/*		var newBoard = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
-
-		for(var i = 0; i < 4; i++)
-		{
-			for(var j = 0; j < 4; j++)
-			{
-				newBoard[j][3 - i] = board[i][j];
-			}
-		}
-		board = newBoard;
-		*/
 		var newBoard = board;
 		board = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
 
@@ -89,7 +78,6 @@ var game2048 = (function()
 			{
 				s += board[i][j] + ' ';
 			}
-			console.log(s);
 		}
 	}
 
@@ -349,11 +337,6 @@ var game2048 = (function()
 			assignRandomly();
 			localStorage.setItem('boardStatus', JSON.stringify(board));
 			localStorage.setItem('playerScore', JSON.stringify(playerScore));
-
-			console.log("Current");
-			print(board);
-			console.log("Pevious");
-			print(prevBoard);
 		}
 
 		if(y)
@@ -479,9 +462,6 @@ var game2048 = (function()
 		bestScore 		= document.getElementById(obj.bestScore);
 		bestTile 		= document.getElementById(obj.bestTile);
 
-		console.log(bestTile);
-		console.log(bestScore);
-
 		if(localStorage.getItem('boardStatus') !== null)
 		{
 			board = JSON.parse(localStorage.getItem('boardStatus'));
@@ -533,10 +513,53 @@ var game2048 = (function()
 			restart[i].addEventListener('click', restartGame);
 		}	
 
+		var left = document.getElementById(obj.buttons.left);
+		var right = document.getElementById(obj.buttons.right);
+		var up = document.getElementById(obj.buttons.up);
+		var down = document.getElementById(obj.buttons.down);
+
+		left.addEventListener('click', ButtonOperations.bind(this, 'left'));
+		right.addEventListener('click', ButtonOperations.bind(this, 'right'));
+		up.addEventListener('click', ButtonOperations.bind(this, 'up'));
+		down.addEventListener('click', ButtonOperations.bind(this, 'down'));
+
 		document.addEventListener('keydown', swipe);
 		backButton.addEventListener('click', backFunction);
 		keepGoing.addEventListener('click', keepGoingFun);
 		reDrawBoard();
+	}
+
+	function ButtonOperations(direction)
+	{
+		var x = false;
+		storeCopy();
+
+		if(direction == 'left' && isLeftSwipePossible()){
+			x = true;
+			leftSwipe();
+		}
+
+		else if(direction == 'right' && isRightSwipePossible()){
+			x = true;
+			rightSwipe();
+		}
+
+		else if(direction == 'up' && isUpSwipePossible()){
+			x = true;
+			upSwipe();
+		}
+
+		else if(direction == 'down' && isDownSwipePossible()){
+			x = true;
+			downSwipe();
+		}
+
+		if(x){
+			assignRandomly();
+			localStorage.setItem('boardStatus', JSON.stringify(board));
+			localStorage.setItem('playerScore', JSON.stringify(playerScore));
+			reDrawBoard();
+		}
 	}
 
 	return {
