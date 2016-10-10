@@ -1,378 +1,79 @@
-*
-{
+*{
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
 body
 {
-	background-image: url("../images/bg.jpg");
+	background-image: url('../images/bg.jpg');
 	background-size: 100vw 100vh;
-	background-repeat: no-repeat;
 }
 
-
-#container
-{
-	width: 450px;
-	margin: 70px auto;
-	margin-bottom: 0;
+#container{
+	position: fixed;
+	left: 25vw;
+	top: 80px;
+	width: 50vw;
+	border: 1px solid black;
+	ox-shadow: 3px 3px 3px grey;
 }
 
-#container > header
-{
-	box-sizing: border-box;
-	display: flex;
-}
-
-#container > header > div, #container > header > button
-{
-	border-radius: 0 5px 5px 0;
-	argin-right: 5px;
-	color: white;
-	font-family: arial;
-	box-sizing: border-box;
-	padding: 10px 0;
-	background-color: rgba(170, 0, 0, 0.7);
-	text-align: center;
-	font-size: 22px;
-	flex: 0 0 225px;
-}
-
-#container > header > button
-{
-	border-radius: 5px 0 0 5px;
-	border: none;
-	transition: 0.3s linear;
-}
-
-#container > header > button:hover
-{
-	border-radius: 0;
-	font-style: italic;
-	background-color: rgba(130, 0, 0, 0.9);
-}
-
-#mainBoard
-{
-	box-sizing: border-box;
-	padding: 5px 5px 0px 5px;
-	box-sizing: border-box;
+#container > header{
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
-	background-color: rgb(100, 100, 100);
-	border-radius: 5px;
+	border-bottom: 1px solid white;
+	background-color: rgba(50, 50, 50, 0.9);
 }
 
-#mainBoard > div
-{
-	flex: 0 0 106px;
-	height: 105px;
-	margin-bottom: 5px;
-	background-color: rgba(200, 200, 200, 0.8);
-	border-radius: 5px;
-}
-
-.tile_2::after, 
-.tile_4::after, 
-.tile_8::after, 
-.tile_16::after, 
-.tile_32::after, 
-.tile_64::after, 
-.tile_128::after, 
-.tile_256::after, 
-.tile_512::after, 
-.tile_1024::after, 
-.tile_2048::after
-{
-	width: 100%;
-	height: 100%;
-	box-sizing: border-box;
-	border: 3px solid white;
+#title{
+	flex: 0 0 75%;
+	line-height: 65px;
+	height: 70px;
 	color: white;
-	font-weight: bold;
-	line-height: 98px;
 	font-family: arial;
-	display: block;
-	text-align: center;
-	border-radius: 5px;
-}
-
-
-.tile_2::after, 
-.tile_4::after, 
-.tile_8::after 
-{
-	font-size: 40px;
-}
-
-.tile_16::after, 
-.tile_32::after, 
-.tile_64::after
-{
-	font-size: 38px;
-}
-
-.tile_128::after, 
-.tile_256::after, 
-.tile_512::after
-{
 	font-size: 32px;
+	padding-left: 15px;
 }
 
-.tile_1024::after, 
-.tile_2048::after
-{
-	border: 4px double white;
-	font-size: 28px;
-}
-
-.tile_2::after
-{
-	background-color: white;
-	color: black;
-	content: "2";
-}
-
-.tile_4::after
-{
-	background-color: rgba(225, 225, 225, 1);
-	ackground-color: rgba(0, 0, 100, 0.8);
-	content: "4";
-	color: black;
-}
-
-.tile_8::after
-{
-	background-color: rgba(255, 175, 0, 0.8);
-	content: "8";
-}
-
-.tile_16::after
-{
-	background-color: rgba(230, 0, 0, 0.7);
-	content: "16";
-}
-
-.tile_32::after
-{
-	background-color: rgba(240, 0, 0, 0.8);
-	content: "32";
-}
-
-.tile_64::after
-{
-	content: "64";
-	background-color: rgba(250, 0, 0, 0.9);
-}
-
-.tile_128::after
-{
-	background-color: rgba(160, 0, 160, 0.4);
-	content: "128";
-}
-
-.tile_256::after
-{
-	background-color: rgba(140, 0, 140, 0.6);
-	content: "256";
-}
-
-.tile_512::after
-{
-	background-color: rgba(120, 0, 120, 0.8);
-	content: "512";
-}
-
-.tile_1024::after
-{
-	background-color: rgba(120, 0, 120, 0.8);
-	content: "1024";
-}
-
-.tile_2048::after
-{
-	content: "2048";
-}
-
-#container > main
-{
-	position: relative;
-}
-
-#gameOver
-{
-	display: none;
-	position: absolute;
-	left: -15px;
-	top: 60px;
-
-	font-weight: bold;
-	text-align: center;
-	background-color: rgba(70, 0, 70, 0.9);
-	width: 480px;
-	flex-direction: column;
-	align-items: center;
-	line-height: 50px;
-	font-size: 25px;
-	border: white solid;
-	box-sizing: border-box;
-}
-
-#text
-{
-	left: -15px;
-	top: 80px;
-
-	box-sizing: border-box;
-	font-family: arial;
-	width: 480px;
+#rating{
+	flex: 0 0 25%;
+	line-height: 65px;
+	height: 70px;
 	color: white;
-	padding: 15px;
-}
-
-#backDiv, #gameOver .restart
-{
-	font-size: 20px;
-	width: 240px;
-	display: inline-block;
-	transition: background-color 0.4s linear;
-	box-sizing: border-box;
-	font-weight: normal;
-}
-
-#backDiv:hover, #gameOver .restart:hover
-{
-	border-radius: 10px;
-	background-color: rgba(130, 0, 130, 1);
-}
-
-#gameWon
-{
-	display: none;
-	position: absolute;
-	top: 90px;
-	left: -25px;
-
-	border: 4px double white;
-	color: white;
-	font-family: arial;
-	font-size: 23px;
-	text-align: center;
-	box-sizing: border-box;
-	padding: 15px;
-	background-color: rgba(200, 0, 0, 1);
-	width: 500px;
-	eight: 200px;
-}
-
-#keepGoing
-{
-	margin: 25px auto;
-	ackground-color: pink;
-}
-
-#gameWon .restart
-{
-	margin: 0 auto;
-	ackground-color: blue;
-}
-
-#keepGoing, #gameWon .restart
-{
-	font-size: 20px;
-	width: 50%;
-	height: 50px;
-	box-sizing: border-box;
-	padding: 13px 0;
-	transition: background-color 0.3s linear;
-}
-
-#keepGoing:hover, #gameWon .restart:hover
-{
-	background-color: rgba(150, 0, 0, 0.8);
-	font-style: italic;
-}
-
-a
-{
-	display: block;
-}
-
-a:link, a:active, a:hover, a:visited
-{
-	color: white;
-	font-family: arial;
-	font-style: none;
-	text-decoration: none;
-}
-
-#bottom
-{
-	width: 100%;
-	text-align: center;
-	font-size: 22px;
-	font-family: arial;
-	margin-top: 10px;
-}
-
-#bestScore, #bestTile
-{
-	position: fixed;
-	background-color: purple;
-	width: 250px;
-	height: 45px;
-	text-align: center;
-	box-sizing: border-box;
-	border: 1px solid white;
-	color: white;
+	text-align: right;
 	font-family: arial;
 	font-size: 20px;
-	line-height: 40px;
+	padding-right: 20px;
 }
 
-#bestScore
-{
-	top: 5px;
-	left: 5px;
+#info{
+	flex: 0 0 100%;
+	font-family: arial;
+	font-size: 13px;
+	letter-spacing: 0.2px;
+	padding-left: 15px;
+	color: rgba(240, 240, 240, 0.9);
+	padding-bottom: 25px;
 }
 
-#bestTile
-{
-	top: 55px;
-	left: 5px;
+#container > section{
+	display: flex;
+	flex-wrap: wrap;
+	height: 350px;
+	background-color: rgba(220, 220, 220, 0.9);
 }
 
-#button_left, #button_right, #button_up, #button_down{
-	position: fixed;
-
-	display: block;
-	font-size: 100px;
-	width: 50px;
-	height: 50px;
-	text-align: center;
-	color: white;
-	cursor: pointer;
-	transition: 0.5s;
+#container > section > img{
+	flex: 0 0 33%;
+	height: 100%;
 }
 
-#button_up{
-	top: 150px;
-	left: 100px;	
-}
-
-#button_left{
-	top: 225px;
-	left: 25px;
-}
-
-#button_right{
-	top: 225px;
-	left: 175px;
-}
-
-#button_down{
-	top: 300px;
-	left: 100px;
+#container > section > div{
+	flex: 0 0 65%;
+	height: 100%;
+	font-size: 15px;
+	font-family: arial;
+	line-height: 25px;
+	padding: 20px 40px;
 }

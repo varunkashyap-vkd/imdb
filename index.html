@@ -9,87 +9,42 @@
  </head>
 
  <body>
-
- 		<i class="fa fa-angle-left" aria-hidden="true" id = "button_left"></i> 
- 		<i class="fa fa-angle-right" aria-hidden="true" id = "button_right"></i> 
- 		<i class="fa fa-angle-up" aria-hidden="true" id = "button_up"></i> 
- 		<i class="fa fa-angle-down" aria-hidden="true" id = "button_down"></i> 
-
  	<div id = "container">
  		<header>
- 			<button id = "restart" class = "restartButton">	Restart 	</button>
- 			<div id = "score"> 		Score : 0	</div>
+ 			<div id = "title"> Back To The Future (1985) </div>
+ 			<div id = "rating"> 8.5/10 </div>
+ 			<div id = "info"> PG | 116min | Adventure, Comedy, Sci-Fi | 3 July, 1985 </div>
  		</header>
 
- 		<main>
- 			<div id = "mainBoard">
- 				<div class = "tile">	</div>
- 				<div class = "tile">	</div>
- 				<div class = "tile">	</div>
- 				<div class = "tile">	</div>
- 				<div class = "tile">	</div>
- 				<div class = "tile">	</div>
- 				<div class = "tile">	</div>
- 				<div class = "tile">	</div>
- 				<div class = "tile">	</div>
- 				<div class = "tile">	</div>
- 				<div class = "tile">	</div>
- 				<div class = "tile">	</div>
- 				<div class = "tile">	</div>
- 				<div class = "tile">	</div>
- 				<div class = "tile">	</div>
- 				<div class = "tile">	</div>
+ 		<section>
+ 			<img src="https://images-na.ssl-images-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg" id = "poster">
+
+ 			<div id = "plot"> 
+ 				Marty McFly, a 17-year-old high school student, is accidentally sent 30 years into the past in a time-traveling DeLorean invented by his close friend, the maverick scientist Doc Brown. <br><br>
+
+ 				Director : Robert Zemeckis <br>
+ 				Writers : Robert Zemeckis, Bob Gale <br>
+ 				Stars : Michael J. Fox, Christopher Lloyd, Lea Thompson
  			</div>
-
- 			<div id = "bestScore">	Best Score 	</div>
- 			<div id = "bestTile">	Best Tile 	</div>
- 			<div id = "bottom"> Use the arrow keys to swipe. 'R' for reset.	</div>
-
- 			<div id = "gameOver">
- 				<div id = "text">
- 					Game Over !!! Well Try !!!
- 					<br>
- 					Your Score : 
- 					<br>
- 					Biggest Tile : 
- 				</div>
-
- 				<a href="#" id = "back">				<div id = "backDiv">			Back 		</div>	</a>
- 				<a href="#" class="restartButton">		<div class = "restart">			Restart 	</div>	</a>
- 			</div>
-
- 			<div id = "gameWon">
- 				Congratulations, 2048 tile reached *_*
-
- 				<a href="#" id = "back">				<div id = "keepGoing">			Keep Going 		</div>	</a>
- 				<a href="#" class="restartButton">		<div class = "restart">			Restart 	</div>	</a>
- 			</div>
- 		</main>
+ 		</section>
  	</div>
 
-
+ 	<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.5.0/annyang.min.js"></script>
+ 	<script   src="https://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
  	<script type="text/javascript" src = "js/code.js">		</script>
  	<script type="text/javascript">
 
- 		var x = {
- 			gameOver : 'gameOver',
- 			tileClass : 'tile',
- 			back : 'back',
- 			message : 'text',
- 			restart : 'restartButton',
- 			score : 'score',
- 			keepGoing : 'keepGoing',
- 			gameWon : 'gameWon',
- 			bestScore : 'bestScore',
- 			bestTile : 'bestTile',
- 			buttons : {left : 'button_left', right : 'button_right', up : 'button_up', down : 'button_down'}
- 		};
+ 		var obj = {
+ 			title : 'title',
+ 			rating : 'rating',
+ 			info : 'info',
+ 			poster : 'poster',
+ 			plot : 'plot',
+ 		}
 
- 		game2048.init(x);
+ 		game2048.init(obj);
 
  	</script>
-
-
  </body>
 
 
