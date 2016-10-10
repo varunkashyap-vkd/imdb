@@ -23,15 +23,21 @@ var game2048 = (function()
 	function FetchMovieData(title)
 	{
 		title = title.substring(1);
-		console.log(title + title.length);
+
 		$.ajax({
-			url: 'http://www.omdbapi.com/',
+			url: 'https://www.omdbapi.com/',
 			type: 'GET', 
 			data: {t : title}, 
 			dataType: 'json',
 			success: successfunction,
-			error: function(err) { alert(err); },
+			error: errorfunction,
 		});
+	}
+
+	function errorfunction(err)
+	{
+		console.log(err);
+		busy = false;
 	}
 
 	function successfunction(data)
@@ -60,7 +66,7 @@ var game2048 = (function()
 		plot = document.getElementById(obj.plot);
 
 		GetTextFromSpeech();
-//		FetchMovieData('breaking bad');
+		FetchMovieData(' breaking bad');
 	}
 
 	return {
