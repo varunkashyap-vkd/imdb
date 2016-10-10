@@ -518,48 +518,15 @@ var game2048 = (function()
 		var up = document.getElementById(obj.buttons.up);
 		var down = document.getElementById(obj.buttons.down);
 
-		left.addEventListener('click', ButtonOperations.bind(this, 'left'));
-		right.addEventListener('click', ButtonOperations.bind(this, 'right'));
-		up.addEventListener('click', ButtonOperations.bind(this, 'up'));
-		down.addEventListener('click', ButtonOperations.bind(this, 'down'));
+		left.addEventListener('click', swipe.bind(this, {keyCode : 37}));
+		right.addEventListener('click', swipe.bind(this, {keyCode : 39}));
+		up.addEventListener('click', swipe.bind(this, {keyCode : 38}));
+		down.addEventListener('click', swipe.bind(this, {keyCode : 40}));
 
 		document.addEventListener('keydown', swipe);
 		backButton.addEventListener('click', backFunction);
 		keepGoing.addEventListener('click', keepGoingFun);
 		reDrawBoard();
-	}
-
-	function ButtonOperations(direction)
-	{
-		var x = false;
-		storeCopy();
-
-		if(direction == 'left' && isLeftSwipePossible()){
-			x = true;
-			leftSwipe();
-		}
-
-		else if(direction == 'right' && isRightSwipePossible()){
-			x = true;
-			rightSwipe();
-		}
-
-		else if(direction == 'up' && isUpSwipePossible()){
-			x = true;
-			upSwipe();
-		}
-
-		else if(direction == 'down' && isDownSwipePossible()){
-			x = true;
-			downSwipe();
-		}
-
-		if(x){
-			assignRandomly();
-			localStorage.setItem('boardStatus', JSON.stringify(board));
-			localStorage.setItem('playerScore', JSON.stringify(playerScore));
-			reDrawBoard();
-		}
 	}
 
 	return {

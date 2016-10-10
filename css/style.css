@@ -376,7 +376,3 @@ a:link, a:active, a:hover, a:visited
 	top: 300px;
 	left: 100px;
 }
-
-#button_left:hover, #button_right:hover, #button_up:hover, #button_down:hover{
-	color: black;
-}
