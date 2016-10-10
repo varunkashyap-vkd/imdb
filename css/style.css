@@ -13,9 +13,9 @@ body
 
 #container{
 	position: fixed;
-	left: 20vw;
+	left: 15vw;
 	top: 80px;
-	width: 60vw;
+	width: 70vw;
 	border: 1px solid black;
 }
 
@@ -65,12 +65,12 @@ body
 }
 
 #container > section > img{
-	flex: 0 0 30%;
+	flex: 0 0 19vw;
 	height: 100%;
 }
 
 #container > section > div{
-	flex: 0 0 65%;
+	flex: 0 0 50vw;
 	height: 100%;
 	font-size: 1.2vw;
 	font-family: arial;
