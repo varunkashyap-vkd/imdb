@@ -70,7 +70,7 @@ body
 }
 
 #container > section > div{
-	flex: 0 0 50vw;
+	flex: 0 0 45vw;
 	height: 100%;
 	font-size: 1.2vw;
 	font-family: arial;
