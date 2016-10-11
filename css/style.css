@@ -66,8 +66,8 @@ body
 }
 
 #container > section > img{
-	flex: 0 0 19vw;
 	height: 100%;
+	flex: 0 0 19vw;
 }
 
 #container > section > div{
